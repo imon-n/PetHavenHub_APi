@@ -1,0 +1,42 @@
+<nav class="flex items-center justify-between flex-wrap bg-white p-6 px-10">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <h4 class="text-info">PetHavenHub</h4>
+    </div>
+    <div class="block lg:hidden">
+        <button class="flex items-center px-3 py-2 border rounded text-white border-white-400 hover:text-white hover:border-white">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+        </button>
+    </div>
+
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto px-10">
+        {% if request.user.is_authenticated %}
+            <div class="text-md lg:flex-grow">
+                <span style="text-decoration: none; font-weight: bold;margin-right: 20px;">
+                    <a href="{% url 'deposit_money' %}" style="text-decoration: none; font-weight: bold;">Deposit</a>
+                </span>
+                <span style="text-decoration: none; font-weight: bold;margin-right: 20px;">
+                    <a href="{% url 'add_post' %}" style="text-decoration: none; font-weight: bold; color: yellow;">Add Post</a>
+                </span>
+                <span style="text-decoration: none; font-weight: bold;">
+                    <a href="{% url 'author_post_pets' %}" style="text-decoration: none; font-weight: bold; color: red;">Your Pets</a>
+                </span>
+            </div>
+            <div class="flex w-auto">
+                <div class="text-blue-900 my-auto font-black px-5">Welcome, {{ request.user.first_name }} (balance : {{request.user.account.balance}}) </div>
+
+                <div class="d-flex gap-2">
+                    <a href="{% url 'profile' %}" class="btn btn-primary">Profile</a>
+                    <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+                </div>
+            </div>
+        {% else %}
+            <div class="text-md lg:flex-grow"></div>
+            <div>
+                <a href="{% url 'login' %}" class="btn btn-primary mr-2">LogIn</a>
+            </div>
+            <div>
+                <a href="" class="btn btn-danger">Register</a>
+            </div>
+        {% endif %}
+    </div>
+</nav>

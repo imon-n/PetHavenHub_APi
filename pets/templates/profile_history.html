@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center m-2">
+    <h2> Pet Adoptions History</h2>
+    <table class="table m-3">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Pet Name</th>
+            <th scope="col">Pet Type</th>
+            <th scope="col">Time</th>
+            <th scope="col">Adoptions Price</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        {% for alb in purchases %}
+        <tbody>
+            <tr>
+              <th scope="row">{{alb.pk}}</th>
+              
+              <td>{{alb.book}}</td>
+              <td>{{alb.category_name}}</td>
+              <td>{{alb.purchased_on}}</td>
+              <td>{{alb.price}}</td>
+              <td><button class="btn btn-danger">Return</button></td>
+            </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+
+      <a href="{% url 'homepage' %}" class="btn btn-primary mt-3 mb-5">Back to Home</a>
+      <br><br>
+</div>
+{% endblock  %}

@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %} {%  load crispy_forms_tags %}
+{% block content %}
+<div class="m-4">
+    <form style="width:50% ; margin : auto" method="post" enctype="multipart/form-data">
+        <h1>Add Post for Pet Adoptions</h1>
+        {% csrf_token %}
+        {{form | crispy}}
+        <div class="m-3" style="text-align: center;">
+            <button class="btn btn-warning m-3">Submit</button>
+        </div> 
+        <br><br>         
+    </form>
+</div>
+{% endblock %} 

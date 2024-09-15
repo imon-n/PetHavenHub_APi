@@ -1,0 +1,13 @@
+
+When doing registration, the user will get an email and after clicking the email verification link his/her account will be activated and then can login to his/her account.
+
+Add Pet: ( 15 Marks )
+Admin and users both can add pets to the system.
+Edit or delete pet details and availability.
+
+Pet Reviews: ( 15 Marks )
+Customers can leave reviews for pets.
+Reviews are only allowed for pets that have been adopted by that customer.
+
+Deployment and Submit: ( 10 Marks )
+Deploy the Pet Adoption System on a secure hosting platform.
